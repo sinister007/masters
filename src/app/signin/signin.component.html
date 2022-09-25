@@ -1,0 +1,31 @@
+<div class="login-wrapper">
+
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]= "signinForm"  >
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email"
+                formControlName="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus ngModel>
+                <div class="alert alert-danger"role="alert" *ngIf="isFormValid">
+                    email is required
+                </div>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password"
+                formControlName="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required ngModel>
+                <div class="alert alert-danger"role="alert" *ngIf="isFormValid">
+                    password is required
+                </div>
+                <div class="alert alert-danger"role="alert" *ngIf="isInvalid">
+                    password must be of length 8 and should not be more than 20
+                </div>
+                <div class="checkbox mb-3">
+               
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" (click)="create()" type="submit">Sign in</button>
+               
+               
+            </form>
+        </div>
+    </div>
+</div>
